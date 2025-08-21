@@ -7,9 +7,9 @@
     <link href="./dist/output.css" rel="stylesheet">
 </head>
 <body class="bg-gradient-to-r from-pink-400 via-purple-500 to-indigo-600 flex items-center justify-center h-screen">
-   <div class="max-w-[960px] bg-gray-900 bg-opacity-90 backdrop-blur-sm grid grid-cols-1 lg:grid-cols-2 items-center gap-8 lg:gap-20 p-8 rounded-2xl shadow-2xl">
+   <div class="max-w-[960px] bg-gray-900 bg-opacity-90 grid grid-cols-1 lg:grid-cols-2 items-center gap-8 lg:gap-20 p-8 rounded-2xl ">
         <div class="relative hidden lg:block">
-            <img src="src/Assets/background.svg" alt="Background" class="w-full h-auto opacity-30" onerror="this.style.display='none'"/>
+            <img src="src/Assets/background.svg" alt="Background" />
             <img src="src/Assets/image2.webp" alt="Login illustration" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3/4 h-auto max-w-md" onerror="this.style.display='none'"/>
         </div>
 
@@ -18,9 +18,9 @@
                 <h1 class="text-5xl font-bold text-white mb-2">Login</h1>
                 <p class="text-gray-300 text-lg">Access to 300+ hours of courses, tutorials and livestreams</p>
             </div>
-            
-            <form action="#" class="space-y-6 text-white">
-                
+
+            <form action class="space-y-6 text-white">
+
                 <div class="relative">
                     <div class="absolute top-1 left-1  rounded-full p-3 flex items-center justify-center text-blue-300">
                         <img src="src/Assets/email.png" alt="" />
@@ -31,16 +31,16 @@
                     <div class="absolute top-1 left-1  rounded-full p-3 flex items-center justify-center text-blue-300">
                         <img src="src/Assets/password.png" alt="" />
                     </div>
-                    <input type="text" placeholder="Password" class="w-full bg-white bg-opacity-10  py-3 px-12 rounded-full  focus:outline-none focus:ring-2 focus:ring-cyan-400 text-white"/>
+                    <input type="password" placeholder="Password" class="w-full bg-white bg-opacity-10  py-3 px-12 rounded-full  focus:outline-none focus:ring-2 focus:ring-cyan-400 text-white"/>
                 </div>
-                <button type="submit" class="bg-gradient-to-r from-blue-400 to-cyan-300 w-full font-semibold rounded-full py-3 px-6 text-gray-900 hover:from-blue-500 hover:to-cyan-400 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
+                <button type="submit" class="bg-gradient-to-r from-blue-400 to-cyan-300 w-full font-semibold rounded-full py-3 px-6 text-gray-900 hover:from-blue-500 hover:to-cyan-400  shadow-lg hover:shadow-xl">
                     Sign in
                 </button>
             </form>
             <div class="text-gray-300 border-t border-gray-600 border-opacity-50 pt-6 space-y-3 text-sm">
-                <p>Don't have an account? <a href="#" class="text-cyan-400 font-semibold cursor-pointer hover:text-cyan-300 transition-colors hover:underline">Sign up</a></p>
-                <p>Forgot password? <a href="#" class="text-cyan-400 font-semibold cursor-pointer hover:text-cyan-300 transition-colors hover:underline">Reset password</a></p>
-                <p>Don't have a password yet? <a href="#" class="text-cyan-400 font-semibold cursor-pointer hover:text-cyan-300 transition-colors hover:underline">Set password</a></p>
+                <p>Don't have an account? <a href class="text-cyan-400 font-semibold cursor-pointer hover:text-cyan-300 transition-colors hover:underline">Sign up</a></p>
+                <p>Forgot password? <a href class="text-cyan-400 font-semibold cursor-pointer hover:text-cyan-300 transition-colors hover:underline">Reset password</a></p>
+                <p>Don't have a password yet? <a href class="text-cyan-400 font-semibold cursor-pointer hover:text-cyan-300 transition-colors hover:underline">Set password</a></p>
             </div>
         </div>
     </div>
