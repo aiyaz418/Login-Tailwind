@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Form</title>
+    <title>Login & Signup Form</title>
     <link href="./dist/output.css" rel="stylesheet">
 </head>
+<script src="https://cdn.tailwindcss.com"></script>
 <body class="bg-gradient-to-r from-pink-400 via-purple-500 to-indigo-600 flex items-center justify-center h-screen">
-   <div class="max-w-[960px] bg-gray-900 bg-opacity-90 grid grid-cols-1 lg:grid-cols-2 items-center gap-8 lg:gap-20 p-8 rounded-2xl ">
+    <div class="max-w-[960px] bg-gray-900 bg-opacity-90 grid grid-cols-1 lg:grid-cols-2 items-center gap-8 lg:gap-20 p-8 rounded-2xl">
         <div class="relative hidden lg:block">
             <img src="src/Assets/background.svg" alt="Background" />
             <img src="src/Assets/image2.webp" alt="Login illustration" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3/4 h-auto max-w-md" onerror="this.style.display='none'"/>
@@ -15,34 +16,101 @@
 
         <div class="max-w-sm mx-auto lg:mx-0 grid gap-6">
             <div>
-                <h1 class="text-5xl font-bold text-white mb-2">Login</h1>
-                <p class="text-gray-300 text-lg">Access to 300+ hours of courses, tutorials and livestreams</p>
+                <div class="flex flex-col items-start gap-2 mb-4">
+                    <h1 id="loginTab" class="text-5xl font-bold text-white cursor-pointer transition-all duration-300 hover:text-cyan-300" onclick="showLogin()">Login</h1>
+                    <h1 id="signupTab" class="text-3xl font-bold text-white cursor-pointer transition-all duration-300 hover:text-cyan-300" onclick="showSignup()">Sign up</h1>
+                </div>
+                <p id="formDescription" class="text-gray-300 text-lg">Access to 300+ hours of courses, tutorials and livestreams</p>
             </div>
 
-            <form action class="space-y-6 text-white">
-
+            <form id="loginForm" action="#" class="space-y-6 text-white">
                 <div class="relative">
-                    <div class="absolute top-1 left-1  rounded-full p-3 flex items-center justify-center text-blue-300">
-                        <img src="src/Assets/email.png" alt="" />
+                    <div class="absolute top-1 left-1 bg-white bg-opacity-20 rounded-full p-3 flex items-center justify-center text-blue-300">
+                        <img src="src/Assets/email.png" alt="" class="w-4 h-4" onerror="this.outerHTML='📧'"/>
                     </div>
-                    <input type="email" placeholder="Email Address" class="w-full bg-white bg-opacity-10  py-3 px-12 rounded-full  focus:outline-none focus:ring-2 focus:ring-cyan-400 text-white"/>
+                    <input type="email" placeholder="Email Address" class="w-full bg-white bg-opacity-10 py-3 px-12 rounded-full focus:outline-none focus:ring-2 focus:ring-cyan-400 text-white placeholder-gray-400"/>
                 </div>
-               <div class="relative">
-                    <div class="absolute top-1 left-1  rounded-full p-3 flex items-center justify-center text-blue-300">
-                        <img src="src/Assets/password.png" alt="" />
+                <div class="relative">
+                    <div class="absolute top-1 left-1 bg-white bg-opacity-20 rounded-full p-3 flex items-center justify-center text-blue-300">
+                        <img src="src/Assets/password.png" alt="" class="w-4 h-4" onerror="this.outerHTML='🔒'"/>
                     </div>
-                    <input type="password" placeholder="Password" class="w-full bg-white bg-opacity-10  py-3 px-12 rounded-full  focus:outline-none focus:ring-2 focus:ring-cyan-400 text-white"/>
+                    <input type="password" placeholder="Password" class="w-full bg-white bg-opacity-10 py-3 px-12 rounded-full focus:outline-none focus:ring-2 focus:ring-cyan-400 text-white placeholder-gray-400"/>
                 </div>
-                <button type="submit" class="bg-gradient-to-r from-blue-400 to-cyan-300 w-full font-semibold rounded-full py-3 px-6 text-gray-900 hover:from-blue-500 hover:to-cyan-400  shadow-lg hover:shadow-xl">
-                    Sign in
+                <button type="submit" class="bg-gradient-to-r from-blue-400 to-cyan-300 w-full font-semibold rounded-full py-3 px-6 text-gray-900 hover:from-blue-500 hover:to-cyan-400 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
+                    Login
                 </button>
             </form>
+
+       
+            <form id="signupForm" action="#" class="space-y-6 text-white hidden">
+                <div class="relative">
+                    <div class="absolute top-1 left-1 bg-white bg-opacity-20 rounded-full p-3 flex items-center justify-center text-blue-300">
+                        <img src="src/Assets/person.png" alt="" class="w-4 h-4" onerror="this.outerHTML='👤'"/>
+                    </div>
+                    <input type="text" placeholder="Full Name" class="w-full bg-white bg-opacity-10 py-3 px-12 rounded-full focus:outline-none focus:ring-2 focus:ring-cyan-400 text-white placeholder-gray-400"/>
+                </div>
+                <div class="relative">
+                    <div class="absolute top-1 left-1 bg-white bg-opacity-20 rounded-full p-3 flex items-center justify-center text-blue-300">
+                        <img src="src/Assets/email.png" alt="" class="w-4 h-4" onerror="this.outerHTML='📧'"/>
+                    </div>
+                    <input type="email" placeholder="Email Address" class="w-full bg-white bg-opacity-10 py-3 px-12 rounded-full focus:outline-none focus:ring-2 focus:ring-cyan-400 text-white placeholder-gray-400"/>
+                </div>
+                <div class="relative">
+                    <div class="absolute top-1 left-1 bg-white bg-opacity-20 rounded-full p-3 flex items-center justify-center text-blue-300">
+                        <img src="src/Assets/password.png" alt="" class="w-4 h-4" onerror="this.outerHTML='🔒'"/>
+                    </div>
+                    <input type="password" placeholder="Password" class="w-full bg-white bg-opacity-10 py-3 px-12 rounded-full focus:outline-none focus:ring-2 focus:ring-cyan-400 text-white placeholder-gray-400"/>
+                </div>
+                <div class="relative">
+                    <div class="absolute top-1 left-1 bg-white bg-opacity-20 rounded-full p-3 flex items-center justify-center text-blue-300">
+                        <img src="src/Assets/password.png" alt="" class="w-4 h-4" onerror="this.outerHTML='🔒'"/>
+                    </div>
+                    <input type="password" placeholder="Confirm Password" class="w-full bg-white bg-opacity-10 py-3 px-12 rounded-full focus:outline-none focus:ring-2 focus:ring-cyan-400 text-white placeholder-gray-400"/>
+                </div>
+                <button type="submit" class="bg-gradient-to-r from-purple-400 to-pink-400 w-full font-semibold rounded-full py-3 px-6 text-white hover:from-purple-500 hover:to-pink-500 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
+                    Sign Up
+                </button>
+            </form>
+
+         
             <div class="text-gray-300 border-t border-gray-600 border-opacity-50 pt-6 space-y-3 text-sm">
-                <p>Don't have an account? <a href class="text-cyan-400 font-semibold cursor-pointer hover:text-cyan-300 transition-colors hover:underline">Sign up</a></p>
-                <p>Forgot password? <a href class="text-cyan-400 font-semibold cursor-pointer hover:text-cyan-300 transition-colors hover:underline">Reset password</a></p>
-                <p>Don't have a password yet? <a href class="text-cyan-400 font-semibold cursor-pointer hover:text-cyan-300 transition-colors hover:underline">Set password</a></p>
+                <p id="toggleText">Don't have an account? <a href="#" onclick="showSignup()" class="text-cyan-400 font-semibold cursor-pointer hover:text-cyan-300 transition-colors hover:underline">Sign up</a></p>
+                <p>Forgot password? <a href="#" class="text-cyan-400 font-semibold cursor-pointer hover:text-cyan-300 transition-colors hover:underline">Reset password</a></p>
+                <p>Don't have a password yet? <a href="#" class="text-cyan-400 font-semibold cursor-pointer hover:text-cyan-300 transition-colors hover:underline">Set password</a></p>
             </div>
         </div>
     </div>
+
+    <script>
+        function showLogin() {
+           
+            document.getElementById('loginForm').classList.remove('hidden');
+            document.getElementById('signupForm').classList.add('hidden');
+            
+          
+            document.getElementById('loginTab').className = 'text-5xl font-bold text-white cursor-pointer transition-all duration-300 hover:text-cyan-300';
+         
+            document.getElementById('signupTab').className = 'text-3xl font-bold text-white cursor-pointer transition-all duration-300 hover:text-cyan-300';
+            
+           
+            document.getElementById('formDescription').textContent = 'Access to 300+ hours of courses, tutorials and livestreams';
+            document.getElementById('toggleText').innerHTML = 'Don\'t have an account? <a href="#" onclick="showSignup()" class="text-cyan-400 font-semibold cursor-pointer hover:text-cyan-300 transition-colors hover:underline">Sign up</a>';
+        }
+
+        function showSignup() {
+        
+            document.getElementById('signupForm').classList.remove('hidden');
+            document.getElementById('loginForm').classList.add('hidden');
+            
+         
+            document.getElementById('signupTab').className = 'text-5xl font-bold text-white cursor-pointer transition-all duration-300 hover:text-cyan-300';
+            
+            document.getElementById('loginTab').className = 'text-3xl font-bold text-white cursor-pointer transition-all duration-300 hover:text-cyan-300';
+            
+       
+            document.getElementById('formDescription').textContent = 'Join our community and get access to exclusive content';
+            document.getElementById('toggleText').innerHTML = 'Already have an account? <a href="#" onclick="showLogin()" class="text-cyan-400 font-semibold cursor-pointer hover:text-cyan-300 transition-colors hover:underline">Sign in</a>';
+        }
+    </script>
 </body>
 </html>
